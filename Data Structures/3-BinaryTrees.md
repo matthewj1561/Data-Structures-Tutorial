@@ -15,23 +15,20 @@ A binary tree is a data structure that places data on either the right or left s
 
 To understand how binary trees work, we need to understand a new concept called recursion.
 
-### Recursion
+-   ### Recursion
+    ***
+    Recursion is the programming principle of iterating a function on an increasingly smaller data set. Within our recursive function, after doing whatever we need to the dataset, we call the same function on a subset of that same dataset. This pattern continues until we get to something called a base case. This base case is what ends our recursive function, and begins returning statements back up the call chain.
 
----
-
-Recursion is the programming principle of iterating a function on an increasingly smaller data set.
-
-## Why use it?
-
----
-
-Since linked lists are basically a collection of pointers, adding and removing elements in a linked list is a very efficient operation.
+One very practical use of recursion is within searching for an element within a binary tree. When given an element to find, we can start at the root and make a comparison. If the element is less than the root, we can move to the left. The opposite is true for the right side. We can then repeat that process on the sub tree we have moved to. This is the nature of a recursive action. We can repeat until we reach the base cases; the element is found or we have reached the end of the tree and the element is not in the structure.
 
 ## Limitations
 
 ---
 
-Linked lists are not contiguous in memory, and thus we do not have the O(1) look-up time we have in a normal array. We must actually traverse the list until we find the element, which can be expensive.
+Binary trees can be considered hard to work with, and the data you received will not always be balanced. This can cause your tree be skewed, and thus result in bad performance. Imagine you receive a data set starting at 5, ending at 0, and increments by 1 This means you would have a tree that falls all on one side.
+<img src="images/unbalancedTree.png"
+     alt="Unbalanced Tree"
+     style="width: 350px" />
 
 ## Time Complexity
 
