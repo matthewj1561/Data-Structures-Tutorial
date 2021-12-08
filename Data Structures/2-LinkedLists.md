@@ -8,6 +8,8 @@ Stacks are a powerful tool, but as previously discussed, we can't change any ele
 
 A Linked List is a unique type of data structure that allows us to add and remove elements from array without having to shift elements in a O(n) operation.
 
+![A Doubly Linked List](images/linkedList.jpg)
+
 ## How it works
 
 ---
