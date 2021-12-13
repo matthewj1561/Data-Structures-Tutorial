@@ -74,12 +74,6 @@ class BST:
             node.right = BST.Node(data)
           else:
             self._insert(data, node.right)
-
-    ###
-    ### Begin Problem
-    ###
-
-    # A helper function for the delete functionality
     def minValueNode(self,node):
       current = node
   
@@ -89,13 +83,59 @@ class BST:
   
       return current
   
-    # Given a binary search tree and a data, this function
-    # delete the data and returns the new root
+  # Given a binary search tree and a data, this function
+  # delete the data and returns the new root
  
-  
-    def _deleteNode(self, root, data):
-      # Your code goes here.
-      pass
+ 
+    def _deleteNode(self, node, data):
+
+      # Base Case
+      if node is None:
+        print("Value is not in tree")
+        return node
+
+
+      # If the data to be deleted
+      # is smaller than the node's
+      # data then it lies in  left subtree
+      if data < node.data:
+        node.left = self._deleteNode(node.left, data)
+
+      # If the kye to be delete
+      # is greater than the node's data
+      # then it lies in right subtree
+      elif(data > node.data):
+        node.right = self._deleteNode(node.right, data)
+
+      # If data is same as node's data, then this is the node
+      # to be deleted
+      else:
+
+          # Node with only one child or no child
+        if node.left is None:
+            temp = node.right
+            node = None
+            return temp
+
+        elif node.right is None:
+            temp = node.left
+            node = None
+            return temp
+
+        # Node with two children:
+        # Get the inorder successor
+        # (smallest in the right subtree)
+        temp = self.minValueNode(node.right)
+
+        # Copy the inorder successor's
+        # content to this node
+        node.data = temp.data
+
+        # Delete the inorder successor
+        node.right = self._deleteNode(node.right, temp.data)
+
+      return node
+
 
          
     def __iter__(self):
@@ -129,12 +169,15 @@ tree.insert(3)
 tree.insert(7)
 tree.insert(10)
 tree.insert(1)
-#Original: 5, 3, 7, 10, 1
+#5, 3, 7, 10, 1
+
 
 tree.delete(10)
 tree.delete(5)
+tree.delete(342)
+
 
 for n in tree:
     print(n)
-#Expected: 1, 3, 7
+# Value is not in tree, 1, 3, 7
 

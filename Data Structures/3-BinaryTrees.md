@@ -141,6 +141,13 @@ tree.insert(10)
 tree.insert(1)
 ```
 
-### Try it yourself!
+## Problems
+---
 
-[Binary Tree Deletion Problem](py_files/binaryTree_2.py)
+This problem is quite in depth, and requires you to delete an element from a binary tree. 
+
+[Binary Tree Deletion Problem](py_files/binaryTree_1.py)
+
+[Binary Tree Deletion Problem Solution](py_files/binaryTree_1_solution.py)
+
+
